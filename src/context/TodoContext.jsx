@@ -68,24 +68,50 @@ export const TodoProvider = ({ children }) => {
       fetchTodos();
     }
   }, [isLoaded, isSignedIn, user]);
+ 
+
 
   // Add a new todo
-  const addTodo = async (todoText) => {
-    try {
-      const newRecord = await db.insert(Records).values({
-        userId: user.id,  // Use Clerk's user ID
-        todo: todoText,  // Store the todo text
-        createdBy: user.name || "Unknown",
-        // Assume the username is used as the creator
-        completed: false,  // Default to false
-      });
+//  const addTodo = async ({ todo, completed = false, createdBy = "Unknown" }) => {
+//   try {
+//     const newTodo = {
+//       userId: user.id,
+//       todo,
+//       completed,
+//       createdBy,
+//     };
 
-      // Re-fetch todos after adding a new one
-      await fetchTodos();
-    } catch (error) {
-      console.error("Error adding todo:", error);
-    }
-  };
+//     // Optimistically add the new todo to the state immediately
+//     setTodos((prev) => [...prev, newTodo]);
+
+//     // Now insert the new todo into the database
+//     await db.insert(Records).values(newTodo);
+
+//     // Re-fetch todos from DB to ensure state consistency (optional)
+//     fetchTodos();
+//   } catch (error) {
+//     console.error("Error adding todo:", error);
+//   }
+// };
+const addTodo = async ({ todo, completed = false, createdBy = "Unknown" }) => {
+  try {
+    const newTodo = {
+      userId: user.id,
+      todo,
+      completed,
+      createdBy,
+    };
+
+    // Insert the new todo into the database
+    await db.insert(Records).values(newTodo);
+
+    // Refresh the page to show the updated list of todos
+    window.location.reload();
+  } catch (error) {
+    console.error("Error adding todo:", error);
+  }
+};
+
 
   // Update a todo
   const updateTodo = async (id, updatedTodo) => {
