@@ -78,7 +78,7 @@ smoothness_mean, compactness_mean, concavity_mean, concave points_mean, ... ,
         ></textarea>
         <button
           type="submit"
-          className="w-full p-2 bg-green-500 text-white rounded hover:bg-green-700"
+          className="w-500 p-2 bg-green-500 text-white rounded hover:bg-green-700"
           disabled={loading}
         >
           {loading ? "Predicting..." : "Predict"}
@@ -107,12 +107,12 @@ smoothness_mean, compactness_mean, concavity_mean, concave points_mean, ... ,
 } */}
 
 
-<p>Click below to navigate to the home page:</p>
+<p> ....</p>
 
 {/* Buttons for Navigation with Inline Styling */}
 <button 
   onClick={() => navigate('/')} 
-  className="w-full p-2 bg-purple-500 text-white rounded hover:bg-green-700"
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
 >
   Go to Home Page
 </button>

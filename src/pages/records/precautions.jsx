@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const testimonials = [
   {
@@ -22,6 +23,7 @@ const testimonials = [
 ];
 
 function Learning() {
+  const navigate = useNavigate();
   const videos = [
     {
       title: "Breast Cancer Awareness",
@@ -100,7 +102,7 @@ function Learning() {
       </section>
       <div className="mt-20 px-4 max-w-6xl mx-auto text-gray-500">
   <h2 className="text-4xl font-bold italic text-center mb-10">
-    <u>What Survivors Say</u>
+    <u>What Survivors Say ?</u>
   </h2>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -132,6 +134,17 @@ function Learning() {
       <p className="font-semibold text-right">– Dr. Meena S., Oncologist</p>
     </div>
   </div>
+  <div className="mt-12 text-center">
+      
+
+{/* Buttons for Navigation with Inline Styling */}
+<button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
+    </div>
 </div>
 
 

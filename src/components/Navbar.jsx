@@ -11,6 +11,7 @@ import { IconHeartHandshake } from "@tabler/icons-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  
   const [isActive, setIsActive] = useState("dashboard");
   const [toggleDrawer, setToggleDrawer] = useState(false);
  const { fetchUsers, users, fetchUserRecords } = useStateContext();
@@ -53,6 +54,7 @@ const Navbar = () => {
         <input
           type="text"
           placeholder="Search for records"
+           
           className="flex w-full bg-transparent font-epilogue text-[14px] font-normal text-white outline-none placeholder:text-[#4b5264]"
         />
         <div className="flex h-full w-[72px] cursor-pointer items-center justify-center rounded-[20px] bg-[#4acd8d]">

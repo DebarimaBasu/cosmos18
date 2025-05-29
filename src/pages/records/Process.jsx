@@ -1,4 +1,7 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 const Process = () => {
+  const navigate = useNavigate();
   const questions = [
     { 
       id: 1, 
@@ -46,7 +49,7 @@ const Process = () => {
     }]
        return (
     <div className="max-w-7xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4 text-white"> HOW IT WORKS</h2>
+      <h2 className="text-2xl font-bold mb-4 text-green-500"> HOW IT WORKS</h2>
       <div >
         {questions.map(({ id, question, answer }) => (
           <div key={id} className="border-green-400 py-4 px-4 mb-4 rounded-lg bg-gray-800 border-l">
@@ -59,6 +62,17 @@ const Process = () => {
           </div>
         ))}
       </div>
+      <div className="mt-12 text-center">
+      
+
+{/* Buttons for Navigation with Inline Styling */}
+<button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
+    </div>
     </div>
   );
 };

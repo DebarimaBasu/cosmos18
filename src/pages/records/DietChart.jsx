@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const dietSections = [
   {
@@ -47,6 +48,7 @@ const dietSections = [
 ];
 
 const DietChart = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat py-10 px-4"
@@ -85,7 +87,19 @@ const DietChart = () => {
           or medical history.
         </p>
       </div>
+      <div className="mt-12 text-center">
+      
+
+{/* Buttons for Navigation with Inline Styling */}
+<button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
     </div>
+    </div>
+  
   );
 };
 

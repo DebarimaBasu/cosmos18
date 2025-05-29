@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Stethoscope,
   ScanLine,
@@ -62,6 +63,7 @@ const steps = [
 ];
 
 const TreatmentProcess = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-700 to-slate-900 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-transparent shadow-lg rounded-2xl p-6">
@@ -97,6 +99,17 @@ const TreatmentProcess = () => {
           medical professional to determine the best approach.
         </p>
       </div>
+      <div className="mt-12 text-center">
+      
+
+{/* Buttons for Navigation with Inline Styling */}
+<button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
+    </div>
     </div>
   );
 };

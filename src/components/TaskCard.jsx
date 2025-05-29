@@ -38,7 +38,7 @@ function TaskCard({ task, deleteTask, updateTask }) {
       <div
         ref={setNodeRef}
         style={style}
-        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl border-2 border-green-500 bg-mainBackgroundColor p-3 text-left opacity-30"
+        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl border-2 border-blue-500 bg-mainBackgroundColor p-3 text-left opacity-30"
       />
     );
   }

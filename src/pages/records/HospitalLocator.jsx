@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
+import { useNavigate } from "react-router-dom";
 const defaultLocation = { lat: 28.6139, lng: 77.2090 }; // New Delhi
 
 const HospitalLocator = () => {
   const [location, setLocation] = useState(null);
   const [hospitals, setHospitals] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -111,6 +112,17 @@ const HospitalLocator = () => {
           )}
         </div>
       </div>
+      <div className="mt-12 text-center">
+      
+
+{/* Buttons for Navigation with Inline Styling */}
+<button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
+    </div>
     </div>
   );
 };

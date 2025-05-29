@@ -105,7 +105,7 @@ const DisplayInfo = () => {
       onClick: () => navigate("/precaution"),
     },
     {
-      title: "Doctor chart",
+      title: "Helpline Directory",
       subtitle: "View",
       icon: IconStethoscope,
       onClick: () => navigate("/doctor"),

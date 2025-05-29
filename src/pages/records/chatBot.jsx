@@ -10,9 +10,11 @@ import { useState ,useEffect} from "react";
 import { useUser,useClerk } from "@clerk/clerk-react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+
 export const ChatBot = () => {
     const { isSignedIn, isLoaded } = useUser();
      const clerk = useClerk();
+     
     
       useEffect(() => {
         if (isLoaded && !isSignedIn) {
@@ -67,7 +69,7 @@ export const ChatBot = () => {
           }}
     >
      
-      <div className="text-white text-2xl font-bold mb-4 ">Chat with rob</div>
+      <div className="text-white text-2xl font-bold mb-4 ">What can I help with? 🙋🏻‍♀</div>
      
       <div
   className="flex-1 w-full sm:w-1/2 h-screen sm:h-[600px]"
@@ -97,6 +99,8 @@ export const ChatBot = () => {
     </ChatContainer>
   </MainContainer>
 </div>
+
     </div>
+    
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const BreastCancerSymptoms = () => {
+  const navigate = useNavigate();
   const symptoms = [
     {
       title: "Lump in the Breast or Underarm",
@@ -146,6 +147,14 @@ const BreastCancerSymptoms = () => {
           </div>
         )}
       </section>
+       <div className="mt-12 text-center">
+      <button 
+  onClick={() => navigate('/')} 
+  className="w-400 p-2 bg-pink-500 text-white rounded hover:bg-pink-700"
+>
+  Go to Home Page
+</button>
+    </div>
     </div>
   );
 };

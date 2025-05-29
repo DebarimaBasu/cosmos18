@@ -22,7 +22,7 @@ const MetricsCard = ({
       </div>
     </div>
     <a
-      className="inline-flex items-center justify-between rounded-b-xl border-x-0 border-green-600 px-4 py-3 text-sm text-gray-400 hover:bg-green-800 md:px-5 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800"
+      className="inline-flex items-center justify-between rounded-b-xl border-x-0 border-blue-600 px-4 py-3 text-sm text-gray-400 hover:bg-gray-700 md:px-5 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800"
       href="#"
       onClick={onClick}
     >
